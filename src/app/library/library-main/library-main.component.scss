@@ -1,5 +1,6 @@
 :host {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin: 0.5rem;
     border: 1px solid #ddd;
 }
