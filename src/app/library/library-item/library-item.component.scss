@@ -1,0 +1,18 @@
+.item {
+    padding: 1rem;
+}
+
+.play-status {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+}
+
+:host {
+    display: block;
+    transition: all .2s linear;
+    &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.3);
+    }
+}

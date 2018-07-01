@@ -1,0 +1,94 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: '微軟正黑體修正';
+    unicode-range: U+7db0, U+78A7, U+7B75; /* ASCII (碧筵綰) */
+    font-style: normal;
+    font-weight: bold;
+    src: local(Yu Gothic), local(MS Gothic);
+}
+/* 一般粗細的時候改回微軟正黑 */
+@font-face {
+    font-family: '微軟正黑體修正';
+    unicode-range: U+7db0, U+78A7, U+7B75; /* ASCII (碧筵綰) */
+    font-style: normal;
+    font-weight: normal;
+    src: local(微軟正黑體);
+}
+*{
+    letter-spacing:0.1rem !important;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: Roboto-Light,"微軟正黑體修正","Microsoft JhengHei",Arial,Helvetica,sans-serif;
+}
+
+.changeColor {
+    transition: color .6s linear, background-color .6s linear;
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    position: fixed;
+}
+.approot{
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    position: fixed;
+}
+.w-auto {
+    width: auto;
+}
+.w-100 {
+    width: 100%;
+}
+.w-80 {
+    width: 80%;
+}
+.w-70 {
+    width: 70%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-30 {
+    width: 30%;
+}
+
+.h-100 {
+    height: 100%;
+}
+.h-50 {
+    height: 50%;
+}
+.d-block {
+    display: block;
+}
+
+.p-t-2 {
+    padding-top: 2rem;
+}
+
+mat-slider {
+  width: 100%;
+}
+.mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill{
+    background-color: #fff;
+}

@@ -1,0 +1,69 @@
+%padding-top-1rem {
+    padding-top: 1rem;
+}
+
+%padding-bottom-1rem {
+    padding-bottom: 1rem;
+}
+
+
+.info-panel {
+    height: 10rem;
+
+    .info-text{
+        padding-left: 2rem;
+    }
+}
+
+.song-title {
+    @extend %padding-bottom-1rem;
+    font-size: 1.5rem;
+}
+
+.song-info {
+    @extend %padding-bottom-1rem;
+    font-size: 1rem;
+}
+
+#control-bar{
+    i {
+        $bigger: 0.2;
+        &:hover {
+            transform: scale(1 + $bigger);
+            cursor: pointer;
+        }
+
+        &:nth-child(2) {
+            transform: scale(1.5);
+            &:hover{
+                transform: scale(1.5 + $bigger);
+            }
+        }
+    }
+}
+
+.album{
+    &.old{
+        position: absolute;
+        z-index: 99;
+        opacity: 1;
+    }
+    opacity: 0;
+    height: 10rem;
+    width: 10rem;
+    display: block;
+    border-radius: 50%;
+    z-index: 90;
+}
+
+.song-title,
+.song-artist {
+    &.old{
+        position: absolute;
+        z-index: 99;
+        opacity: 1;
+    }
+    opacity: 0;
+    display: block;
+    z-index: 90;
+}
