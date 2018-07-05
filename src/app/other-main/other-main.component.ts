@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { SocketIOService } from '../socket-io.service';
 import { PlayBackService } from '../play-back.service';
 
 @Component({
@@ -13,12 +14,17 @@ export class OtherMainComponent implements OnInit {
   fontColor
 
   volume = 1;
+  listeners = '0';
 
-  constructor(private playBack: PlayBackService) { }
+  constructor(private socketio: SocketIOService, private playBack: PlayBackService) { }
 
   ngOnInit() {
     this.playBack.onVolumeChange.subscribe(volume => {
       this.volume = volume;
+    });
+
+    this.socketio.onEvent('listeners').subscribe((listeners: string) => {
+      this.listeners = listeners;
     });
   }
 
