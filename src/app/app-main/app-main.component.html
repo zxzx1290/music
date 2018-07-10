@@ -1,8 +1,8 @@
 <div class="background changeColor" [style.background-color]="background"></div>
 <div class="approot">
-  <app-playing-main class="h-50 w-100" fxLayout="row" fxLayoutAlign="center center" (changeBackground)="doChangeBackground($event)" [fontColor]="fontColor"></app-playing-main>
-  <div class="h-50 w-100" fxLayout="row" style="border-top: 1px solid #ccc">
-    <app-library-main class="w-50" [fontColor]="fontColor"></app-library-main>
-    <app-other-main fxLayout="row" class="w-50" style="border-left: 1px solid #ccc" [fontColor]="fontColor"></app-other-main>
+  <app-playing-main class="d-block" (changeBackground)="doChangeBackground($event)" [fontColor]="fontColor"></app-playing-main>
+  <div id="app-main-second" class="h-50 w-100" style="border-top: 1px solid #ccc">
+    <app-library-main [fontColor]="fontColor"></app-library-main>
+    <app-other-main style="border-left: 1px solid #ccc" [fontColor]="fontColor"></app-other-main>
   </div>
 </div>

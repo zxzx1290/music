@@ -1,10 +1,14 @@
-<div fxFlex="100%" fxLayout="row" fxLayoutAlign="center center" class="changeColor" [style.color]="fontColor">
-    <div fxFlex="20%" fxLayoutAlign="center center">
-        <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+<div class="main changeColor w-100" [style.color]="fontColor">
+
+    <div class="item w-80">
+        <div class="w-20">
+            <i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="w-60">
+            <mat-slider min="0" max="1" step="0.01" [value]="volume" (input)="volumeChange($event.value)"></mat-slider>
+        </div>
     </div>
-    <div fxFlex="60%" fxLayout="row">
-        <mat-slider min="0" max="1" step="0.01" [value]="volume" (input)="volumeChange($event.value)"></mat-slider>
-    </div>
+
     <div class="bottom-info">
         <span>Listeners: {{ listeners }}</span>
     </div>

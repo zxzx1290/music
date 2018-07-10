@@ -1,3 +1,7 @@
-<ng-container *ngFor="let item of playlist; let idx = index">
-  <app-library-item [fontColor]="fontColor" [item]="item" [currentSong]="currentSong" (switchSong)="doSwitchSong($event)"></app-library-item>
-</ng-container>
+<div class="main">
+    <ng-container *ngFor="let item of playlist; let idx = index">
+      <app-library-item [fontColor]="fontColor" [item]="item" [currentSong]="currentSong" (switchSong)="doSwitchSong($event)"></app-library-item>
+    </ng-container>
+</div>
+
+

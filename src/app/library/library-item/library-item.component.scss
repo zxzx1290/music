@@ -10,6 +10,8 @@
 
 :host {
     display: block;
+    float: left;
+    width: 100%;
     transition: all .2s linear;
     &:hover {
         cursor: pointer;

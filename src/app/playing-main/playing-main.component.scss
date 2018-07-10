@@ -1,3 +1,13 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 50%;
+    //手機
+    @media all and (max-width: 767px) {
+        height: 100%;
+    }
+}
+
 %padding-top-1rem {
     padding-top: 1rem;
 }
@@ -6,26 +16,97 @@
     padding-bottom: 1rem;
 }
 
+.top-panel {
+    width: 50%;
+    height: 100%;
 
-.info-panel {
-    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    .info-text{
-        padding-left: 2rem;
+    @media all and (max-width: 767px) {
+        width: 100%;
+        height: 50%;
     }
 }
 
-.song-title {
-    @extend %padding-bottom-1rem;
-    font-size: 1.5rem;
+#section-one {
+    flex-direction: row;
+
+    @media all and (max-width: 767px) {
+        flex-direction: column;
+    }
 }
 
+#section-two div:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.album-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    @media all and (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.song-info-container {
+    width: 70%;
+
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+
+    @media all and (max-width: 767px) {
+        width: 100%;
+    }
+
+    & > div{
+        position: relative;
+        margin: 1rem;
+
+        @media all and (min-width: 768px) {
+            padding-left: 2rem;
+        }
+
+        @media all and (max-width: 767px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & > div {
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+
 .song-info {
-    @extend %padding-bottom-1rem;
     font-size: 1rem;
 }
 
+.song-title {
+    font-size: 1.5rem;
+}
+
 #control-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
     i {
         $bigger: 0.2;
         &:hover {
@@ -58,6 +139,11 @@
 
 .song-title,
 .song-artist {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
     &.old{
         position: absolute;
         z-index: 99;
