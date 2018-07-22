@@ -61,7 +61,7 @@ export class PlayingMainComponent implements OnInit, OnDestroy {
       this.processSong(song);
     });
 
-    this.htmlInterface.nativeWindow.audioP = new Audio();
+    this.htmlInterface.nativeWindow.audioP = this.htmlInterface.nativeDocument.getElementById('myaudio');
     this.playBack.setVolume(0.02);
 
     // 訂閱播放變更事件
@@ -70,7 +70,13 @@ export class PlayingMainComponent implements OnInit, OnDestroy {
       if(this.status.playing){
         console.log('play audio');
         this.htmlInterface.nativeWindow.audioP.src = this.getAudioSrc();
-        this.htmlInterface.nativeWindow.audioP.play();
+        this.htmlInterface.nativeWindow.audioP.play().then(() => {
+            ;
+        }).catch((err) => {
+            //this.htmlInterface.nativeWindow.audioP.controls = true;
+            this.htmlInterface.nativeDocument.getElementById('wrapper').style.display = 'flex';
+            this.htmlInterface.nativeWindow.audioP.pause();
+        });
       }else{
         console.log('pause audio');
         this.htmlInterface.nativeWindow.audioP.pause();
@@ -132,6 +138,14 @@ export class PlayingMainComponent implements OnInit, OnDestroy {
 
   stopAutoSeek(){
     this.playBack.stopAutoSeek();
+  }
+
+  removeWrapper(e) {
+    setTimeout(() => {
+      e.target.style.display = 'none';
+    }, 1000);
+    this.htmlInterface.nativeWindow.audioP.style.display = 'none';
+    this.htmlInterface.nativeWindow.audioP.play();
   }
 
   fadeAnimationStart(e){
